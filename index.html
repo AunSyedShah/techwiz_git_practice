@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="table_number">Enter Table Number</label>
+    <input type="number" name="" id="table_number">
+    <label for="table_range">Enter Table Range</label>
+    <input type="number" name="" id="table_range">
+    <button onclick="generate_table()">Generate Table</button>
+    <ul id="table_list"></ul>
+
+    <script>
+        function generate_table(){
+            const table_number = document.getElementById("table_number").value;
+            const table_range = document.getElementById("table_range").value;
+            const table_list = document.getElementById("table_list");
+
+            let li_element = null;
+
+            for(let i = 1; i <= Number(table_range); i++){
+                li_element = document.createElement("li");
+                li_element.innerText = `${table_number} x ${i} = ${table_number * i}`;
+                table_list.appendChild(li_element);
+            }
+        }
+    </script>
+</body>
+</html>
